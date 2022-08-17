@@ -1,4 +1,5 @@
-const path = require('path');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+var path = require('path');
 
 module.exports = {
   mode: 'development',
@@ -6,4 +7,18 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js'
   },
+  plugins: [new HtmlWebpackPlugin(
+    {
+    title: '我是package.json里面的title',
+    template: './src/assets/index.html'
+    }
+)],
+module: {
+  rules: [
+    {
+      test: /\.css$/,
+      use: [ 'style-loader', 'css-loader' ]
+    }
+  ]
+}
 };
