@@ -17,7 +17,6 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-
-    "build": "rm -rf dist && webpack"
+    "build": "rm -rf dist && webpack --config webpack.config.prod.js"
   }
 }
